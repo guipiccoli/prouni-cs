@@ -14,6 +14,7 @@ class NotaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     @IBAction func navegarButton(_ sender: UIButton) {
