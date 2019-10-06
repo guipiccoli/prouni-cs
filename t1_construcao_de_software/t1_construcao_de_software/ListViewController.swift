@@ -46,11 +46,20 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detailSegue", sender: nil)
+        performSegue(withIdentifier: "detailSegue", sender: listaCursos?.listaCurso[indexPath.row])
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as? DetailViewController
+        let curso = sender as? Curso
+        viewController?.nameLabel.text = curso?.nome
+        viewController?.scoreLabel.text = curso?.grau
+        viewController?.universityLabel.text = curso?.universidade_nome
+        viewController?.campusLabel.text = curso?.campus_nome
+        viewController?.monthlyPriceLabel.text = curso?.mensalidade
+        viewController?.shiftLabel.text = curso?.turma
+        viewController?.ufLabel.text = curso?.uf_busca
+        viewController?.cityLabel.text = curso?.cidade_busca
     }
     
     
