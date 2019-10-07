@@ -10,15 +10,19 @@ import UIKit
 
 class FiltrosViewController: UIViewController {
 
-    var notaUsuario: String? = nil
+    var notaUsuario: Double!
     @IBOutlet weak var cidadeTextField: UITextField!
     @IBOutlet weak var universidadeTextField: UITextField!
     @IBOutlet weak var cursoTextField: UITextField!
     @IBOutlet weak var ufTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    var loading: UIActivityIndicatorView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        loading = UIActivityIndicatorView(frame: CGRect(x: self.view.frame.maxX/2, y: self.view.frame.maxY/2, width: 0, height: 0))
+        loading?.color = .black
+        self.view.addSubview(loading!)
         let picker = UIPickerView()
         picker.dataSource = self
         picker.delegate = self
@@ -45,11 +49,22 @@ class FiltrosViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let viewController = segue.destination as? ListViewController
+        let lista = sender as? [Curso]
+        viewController?.listaCursos = lista
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "Lista", sender: nil)
+        loading!.startAnimating()
+        view?.bringSubviewToFront(loading!)
+        DataAccess.getListaDeCursos(nota: notaUsuario, uf_busca: ufTextField.text ?? "", cidade_busca: cidadeTextField.text ?? "", universidade_nome: universidadeTextField.text ?? "", nome: cursoTextField.text ?? "", somente_cota: "", somente_integral: "") { (listaCursos) in
+                
+            
+            DispatchQueue.main.async {
+                self.loading?.stopAnimating()
+                self.performSegue(withIdentifier: "Lista", sender: listaCursos)
+            }
+        }
     }
 }
 

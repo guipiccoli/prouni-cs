@@ -15,6 +15,7 @@ class NotaViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        notaTextField.delegate = self
 
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
@@ -33,15 +34,26 @@ class NotaViewController: UIViewController {
 
     @IBAction func navegarButton(_ sender: UIButton) {
         guard let nota = notaTextField.text else { return }
-        self.performSegue(withIdentifier: "Filtros", sender: nota)
+        if !nota.isEmpty {
+            self.performSegue(withIdentifier: "Filtros", sender: nota)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewController = segue.destination as? FiltrosViewController
-        let nota = sender as? String
-        viewController?.notaUsuario = nota
+        guard let nota = sender as? String else { return }
+        let notaNumber = Double.init(nota)
+        viewController?.notaUsuario = notaNumber
     }
-    
+}
+
+extension NotaViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (string >= "0" && string <= "9") || string.isEmpty {
+            return true
+        }
+        return false
+    }
 }
 
 extension UIViewController {
