@@ -47,6 +47,7 @@ class NotaViewController: UIViewController {
     }
 }
 
+//MARK: - Text Field
 extension NotaViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if (string >= "0" && string <= "9") || string.isEmpty {
@@ -56,6 +57,7 @@ extension NotaViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - Hide Keyboard
 extension UIViewController {
     
     func hideKeyboardWhenTappedAround() {

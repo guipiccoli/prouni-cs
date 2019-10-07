@@ -13,6 +13,8 @@ class CursoTableViewCell: UITableViewCell {
     @IBOutlet weak var nomeDoCursoLabel: UILabel!
     @IBOutlet weak var nomeDaFaculdadeLabel: UILabel!
     @IBOutlet weak var localLabel: UILabel!
+    @IBOutlet weak var cotaNotaLabel: UILabel!
+    @IBOutlet weak var amploNotaLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

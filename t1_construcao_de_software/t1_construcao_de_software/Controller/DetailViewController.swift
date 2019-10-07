@@ -16,8 +16,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var monthlyPriceLabel: UILabel!
     @IBOutlet weak var shiftLabel: UILabel!
-    @IBOutlet weak var ufLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var notaIntegralCotaLabel: UILabel!
+    @IBOutlet weak var notaIntegralAmplaLabel: UILabel!
     
     var nameLabelText: String!
     var scoreLabelText: String!
@@ -27,6 +28,9 @@ class DetailViewController: UIViewController {
     var shiftLabelText: String!
     var ufLabelText: String!
     var cityLabelText: String!
+    var notaIntegralCotaText: String!
+    var notaIntegralAmplaText: String!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +41,9 @@ class DetailViewController: UIViewController {
         campusLabel.text = campusLabelText
         monthlyPriceLabel.text = monthlyPriceLabelText
         shiftLabel.text = shiftLabelText
-        ufLabel.text = ufLabelText
-        cityLabel.text = cityLabelText
+        cityLabel.text = "\(cityLabelText ?? ""), \(ufLabelText ?? "")"
+        notaIntegralCotaLabel.text = notaIntegralCotaText
+        notaIntegralAmplaLabel.text = notaIntegralAmplaText
 
     }
 }

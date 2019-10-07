@@ -22,6 +22,8 @@ class ListViewController: UIViewController {
     }
 }
 
+
+//MARK: - Table View
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +43,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.nomeDaFaculdadeLabel.text = "\(curso.universidade_nome ?? "")"
         cell.nomeDoCursoLabel.text = "\(curso.nome ?? "")"
         
+        cell.cotaNotaLabel.text = "C: \(curso.nota_integral_cotas ?? 0.0)"
+        cell.amploNotaLabel.text = "A: \(curso.nota_integral_ampla ?? 0.0)"
+        
         return cell
     }
     
@@ -54,11 +59,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         viewController?.nameLabelText = curso.nome
         viewController?.scoreLabelText = curso.grau
         viewController?.universityLabelText = curso.universidade_nome
-        viewController?.campusLabelText = curso.campus_nome
+        viewController?.campusLabelText = "Campus: \(curso.campus_nome ?? "")"
         viewController?.monthlyPriceLabelText = "R$\(curso.mensalidade ?? 0)"
         viewController?.shiftLabelText = curso.turno
         viewController?.ufLabelText = curso.uf_busca
         viewController?.cityLabelText = curso.cidade_busca
+        viewController?.notaIntegralAmplaText = "Nota Integral Ampla: \(curso.nota_integral_ampla ?? 0.0)"
+        viewController?.notaIntegralCotaText = "Nota Integral Cota: \(curso.nota_integral_cotas ?? 0.0)"
     }
     
     

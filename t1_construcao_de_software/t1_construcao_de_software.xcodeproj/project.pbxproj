@@ -66,18 +66,13 @@
 		6D99BAA92342C03600939FC1 /* t1_construcao_de_software */ = {
 			isa = PBXGroup;
 			children = (
+				E7CC66F1234B874F002E623D /* Controller */,
+				E7CC66F0234B8740002E623D /* View */,
 				6DF98861234562E8003B08F2 /* Service */,
 				6DF9885E23455FB2003B08F2 /* Model */,
 				6D99BAAA2342C03600939FC1 /* AppDelegate.swift */,
-				6D99BAAC2342C03600939FC1 /* NotaViewController.swift */,
-				6D99BAAE2342C03600939FC1 /* Main.storyboard */,
-				6DF9886623456929003B08F2 /* DetailViewController.swift */,
-				6DF9885C23455F4D003B08F2 /* ListViewController.swift */,
-				6D99BABC2342C56500939FC1 /* FiltrosViewController.swift */,
 				6D99BAB12342C03700939FC1 /* Assets.xcassets */,
-				6D99BAB32342C03700939FC1 /* LaunchScreen.storyboard */,
 				6D99BAB62342C03700939FC1 /* Info.plist */,
-				6DF9886423456540003B08F2 /* CursoTableViewCell.swift */,
 			);
 			path = t1_construcao_de_software;
 			sourceTree = "<group>";
@@ -96,6 +91,27 @@
 				6DF98862234562F2003B08F2 /* DataAccess.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		E7CC66F0234B8740002E623D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D99BAB32342C03700939FC1 /* LaunchScreen.storyboard */,
+				6D99BAAE2342C03600939FC1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7CC66F1234B874F002E623D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6DF9885C23455F4D003B08F2 /* ListViewController.swift */,
+				6D99BAAC2342C03600939FC1 /* NotaViewController.swift */,
+				6D99BABC2342C56500939FC1 /* FiltrosViewController.swift */,
+				6DF9886623456929003B08F2 /* DetailViewController.swift */,
+				6DF9886423456540003B08F2 /* CursoTableViewCell.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
