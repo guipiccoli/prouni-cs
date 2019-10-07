@@ -64,23 +64,24 @@ extension FiltrosViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {
-            ufTextField.text = "pr"
+            ufTextField.text = "PR"
         }
         else if row == 1 {
-            ufTextField.text = "sc"
+            ufTextField.text = "SC"
         }
         else {
-            ufTextField.text = "rs"
+            ufTextField.text = "RS"
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if row == 0 {
-            return "pr"
+            return "PR"
         }
         if row == 1 {
-            return "sc"
+            return "SC"
         }
-        return "rs"
+        return "RS"
     }
+    
 }

@@ -20,7 +20,7 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        DataAccess.getListaDeCursos(nota: 500, uf_busca: "RS", cidade_busca: "", universidade_nome: "", nome: "", somente_cota: "", somente_integral: "") { (listaCursos) in
+        DataAccess.getListaDeCursos(nota: 600, uf_busca: "RS", cidade_busca: "", universidade_nome: "", nome: "", somente_cota: "", somente_integral: "") { (listaCursos) in
                 self.listaCursos = listaCursos
             
             DispatchQueue.main.async {
