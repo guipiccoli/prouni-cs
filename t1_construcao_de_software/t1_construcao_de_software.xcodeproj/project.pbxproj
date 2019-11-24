@@ -18,6 +18,8 @@
 		6DF98863234562F2003B08F2 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF98862234562F2003B08F2 /* DataAccess.swift */; };
 		6DF9886523456540003B08F2 /* CursoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9886423456540003B08F2 /* CursoTableViewCell.swift */; };
 		6DF9886723456929003B08F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9886623456929003B08F2 /* DetailViewController.swift */; };
+		E77835EA23836B260042FC89 /* AdministradorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77835E923836B260042FC89 /* AdministradorViewController.swift */; };
+		E77835EC238372700042FC89 /* EditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77835EB238372700042FC89 /* EditDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		6DF98862234562F2003B08F2 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		6DF9886423456540003B08F2 /* CursoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoTableViewCell.swift; sourceTree = "<group>"; };
 		6DF9886623456929003B08F2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E77835E923836B260042FC89 /* AdministradorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministradorViewController.swift; sourceTree = "<group>"; };
+		E77835EB238372700042FC89 /* EditDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				6D99BABC2342C56500939FC1 /* FiltrosViewController.swift */,
 				6DF9886623456929003B08F2 /* DetailViewController.swift */,
 				6DF9886423456540003B08F2 /* CursoTableViewCell.swift */,
+				E77835E923836B260042FC89 /* AdministradorViewController.swift */,
+				E77835EB238372700042FC89 /* EditDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,7 +192,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DF9886023455FC4003B08F2 /* Curso.swift in Sources */,
+				E77835EC238372700042FC89 /* EditDetailViewController.swift in Sources */,
 				6DF98863234562F2003B08F2 /* DataAccess.swift in Sources */,
+				E77835EA23836B260042FC89 /* AdministradorViewController.swift in Sources */,
 				6D99BAAD2342C03600939FC1 /* NotaViewController.swift in Sources */,
 				6DF9886523456540003B08F2 /* CursoTableViewCell.swift in Sources */,
 				6D99BAAB2342C03600939FC1 /* AppDelegate.swift in Sources */,
@@ -339,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G8ZLW892T6;
+				DEVELOPMENT_TEAM = RL63GUXBB4;
 				INFOPLIST_FILE = t1_construcao_de_software/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,7 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G8ZLW892T6;
+				DEVELOPMENT_TEAM = RL63GUXBB4;
 				INFOPLIST_FILE = t1_construcao_de_software/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -9,7 +9,7 @@
 import UIKit
 
 class FiltrosViewController: UIViewController {
-
+    
     var notaUsuario: Double!
     @IBOutlet weak var cidadeTextField: UITextField!
     @IBOutlet weak var bgImageView: UIImageView!
@@ -22,7 +22,7 @@ class FiltrosViewController: UIViewController {
     
     var cota: Bool = false
     var ampla: Bool = false
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,21 +68,34 @@ class FiltrosViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let viewController = segue.destination as? ListViewController
-        let lista = sender as? [Curso]
-        viewController?.listaCursos = lista
+        if notaUsuario == nil {
+            let viewController = segue.destination as? AdministradorViewController
+            let lista = sender as? [Curso]
+            viewController?.listaTodosCursos = lista
+        }
+        else {
+            let viewController = segue.destination as? ListViewController
+            let lista = sender as? [Curso]
+            viewController?.listaCursos = lista
+        }
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
         loading!.startAnimating()
         view?.bringSubviewToFront(loading!)
         
-        DataAccess.getListaDeCursos(nota: notaUsuario, uf_busca: ufTextField.text ?? "", cidade_busca: cidadeTextField.text ?? "", universidade_nome: universidadeTextField.text ?? "", nome: cursoTextField.text ?? "", somente_cota: "\(cota)", somente_integral: "\(ampla)") { (listaCursos) in
-                
+        DataAccess.getListaDeCursos(nota: notaUsuario ?? 1000, uf_busca: ufTextField.text ?? "", cidade_busca: cidadeTextField.text ?? "", universidade_nome: universidadeTextField.text ?? "", nome: cursoTextField.text ?? "", somente_cota: "\(cota)", somente_integral: "\(ampla)") { (listaCursos) in
+            
             
             DispatchQueue.main.async {
                 self.loading?.stopAnimating()
-                self.performSegue(withIdentifier: "Lista", sender: listaCursos)
+                
+                if self.notaUsuario == nil {
+                    self.performSegue(withIdentifier: "ListaAdm", sender: listaCursos)
+                }
+                else {
+                    self.performSegue(withIdentifier: "Lista", sender: listaCursos)
+                }
             }
         }
     }
@@ -99,7 +112,7 @@ extension FiltrosViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         if pickerView.tag == 100 {
             return 3
         }
-        return 3
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -125,11 +138,6 @@ extension FiltrosViewController: UIPickerViewDataSource, UIPickerViewDelegate {
                 ampla = false
                 admissaoTextField.text = "Cotas"
             }
-            else {
-                cota = true
-                ampla = true
-                admissaoTextField.text = "Cotas e Ampla"
-            }
         }
     }
     
@@ -148,11 +156,8 @@ extension FiltrosViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             if row == 0{
                 return "Ampla Concorrencia"
             }
-            if row == 1 {
-                return "Cotas"
-            }
             else {
-                return "Cotas e Ampla"
+                return "Cotas"
             }
         }
     }
