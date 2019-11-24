@@ -19,7 +19,7 @@ Será apresentado para o aluno, uma lista de cursos em que o mesmo se encontra a
  
  ### Administrador
  
- O administrador pode inserir um novo curso, deletar um curso ja existente, ou adicionar um novo curso. Para facilitar sua pesquisa, poderá também filtrar a lista pelos mesmos campos citados acima.
+ O administrador pode inserir um novo curso, deletar ou editar um curso já existente. Para facilitar sua pesquisa, poderá também filtrar a lista pelos mesmos campos citados acima.
 
 ## Como executar a aplicação?
  
