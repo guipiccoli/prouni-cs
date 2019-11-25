@@ -2,6 +2,8 @@
 //  ListViewController.swift
 //  t1_construcao_de_software
 //
+// Lista de todos os cursos que serao mostrados
+//
 //  Created by Fernando Locatelli Maioli on 02/10/19.
 //  Copyright © 2019 Fernando Locatelli Maioli. All rights reserved.
 //

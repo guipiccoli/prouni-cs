@@ -2,6 +2,8 @@
 //  EditDetailViewController.swift
 //  t1_construcao_de_software
 //
+// Onde sao feitas as acoes do administrador, editar, adcionar ou remover um curso
+//
 //  Created by Guilherme Piccoli on 18/11/19.
 //  Copyright © 2019 Fernando Locatelli Maioli. All rights reserved.
 //

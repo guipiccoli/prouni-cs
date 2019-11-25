@@ -2,6 +2,8 @@
 //  ViewController.swift
 //  t1_construcao_de_software
 //
+// Tela para o usuario informar a nota obrigatoria para a pesquisa
+//
 //  Created by Fernando Locatelli Maioli on 30/09/19.
 //  Copyright © 2019 Fernando Locatelli Maioli. All rights reserved.
 //

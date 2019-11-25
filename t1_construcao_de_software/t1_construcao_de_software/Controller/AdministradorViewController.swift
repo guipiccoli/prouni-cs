@@ -2,6 +2,8 @@
 //  AdministradorViewController.swift
 //  t1_construcao_de_software
 //
+// Lista de cursos para o administrador, podera editar, excluir ou adicionar um novo curso
+//
 //  Created by Guilherme Piccoli on 18/11/19.
 //  Copyright © 2019 Fernando Locatelli Maioli. All rights reserved.
 //
