@@ -3,13 +3,23 @@
 
 ## O que é?
 
-Aplicação iOS, para listar cursos e faculdades disponíveis no PROUNI, a partir da entrada obrigatória da nota do usuário, e demais filtros opcionais como:
+Aplicação iOS, para listar cursos e faculdades disponíveis no PROUNI, com uma versão para administrador e outra versão para o aluno que deseja realizar uma pesquisa.
+
+
+### Aluno 
+
+Será apresentado para o aluno, uma lista de cursos em que o mesmo se encontra apto para participar, a partir da entrada obrigatória de sua nota, e demais filtros opcionais como:
 
  - UF
  - Cidade
  - Concorrência (Ampla ou Cotas)
  - Nome do Curso
  - Nome da Universidade
+ 
+ 
+ ### Administrador
+ 
+ O administrador pode inserir um novo curso, deletar ou editar um curso já existente. Para facilitar sua pesquisa, poderá também filtrar a lista pelos mesmos campos citados acima.
 
 ## Como executar a aplicação?
  
